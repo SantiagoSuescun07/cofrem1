@@ -1,0 +1,15 @@
+export const NEWS_QUERY_KEY = "news";
+export const SINGLE_NEWS_KEY = "single-news";
+export const COMMENTS_QUERY_KEY = "comments";
+export const REPORTS_QUERY_KEY = "reports";
+export const SINGLE_REPORT_KEY = "single-newsletter"
+export const PUBLICATIONS_QUERY_KEY = "publications";
+export const SINGLE_PUBLICATION_KEY = "single-publication";
+export const BANNER_QUERY_KEY = "banner_inicio";
+export const PQRS_QUERY_KEY = "pqrs";
+export const CAMPAIGNS_QUERY_KEY = "campaigns";
+export const SINGLE_CAMPAIGN_KEY = "single-campaign";
+export const GAME_DETAILS_QUERY_KEY = "game-details";
+export const RANKING_QUERY_KEY = "ranking";
+export const DOCUMENTS_QUERY_KEY = "documents";
+export const DIGITAL_SERVICE_NODE_KEY = "digital-service-node";
