@@ -55,6 +55,7 @@ api.interceptors.request.use(
       config.headers = config.headers ?? {};
 
       // Headers anti-caché para evitar que el navegador cachee respuestas
+      // Nota: No añadimos timestamp a la URL porque viola la especificación JSON:API
       config.headers["Cache-Control"] = "no-cache, no-store, must-revalidate";
       config.headers["Pragma"] = "no-cache";
       config.headers["Expires"] = "0";
@@ -65,15 +66,6 @@ api.interceptors.request.use(
         // Si no hay token, loguear un warning pero no bloquear la petición
         // El servidor devolverá 401 y el interceptor de respuesta lo manejará
         console.warn("⚠️ No hay access token disponible para la petición:", config.url);
-      }
-
-      // Añadir timestamp a peticiones GET para evitar caché basado en URL
-      if (config.method === "get" || config.method === "GET") {
-        config.params = config.params ?? {};
-        // Solo añadir timestamp si no existe ya (para permitir override)
-        if (!config.params.t && !config.params._t) {
-          config.params.t = Date.now();
-        }
       }
 
       if (drupalTokenLog.isEnabled()) {
